@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
+    <script src="random.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="logo" src="https://i.imgur.com/XcGu2cg.png"/>
+    
+    <div id="filter">
+        <button class="bg-black" id="find_all">全部</button>
+        <button class="bg-black" id="rec">重新載入</button>
+        <button class="bg-black" id="rerun">重置資料</button>
+        <button class="bg-black" id="save">關閉</button>
+        <button class="bg-orange" id="find_by_index">編號查詢</button>
+        <button class="bg-orange" id="find_by_name">名稱查詢</button>
+        <button class="bg-orange" id="find_by_attr">屬性查詢</button>
+        <br/>
+        <button class="bg-black" id="order_reset">重置排序</button>
+        <button class="bg-blue" id="order_by_weight_desc">體重大排到小</button>
+        <button class="bg-blue" id="order_by_weight_asc">體重小排到大</button>
+        <button class="bg-blue" id="order_by_height_desc">身高大排到小</button>
+        <button class="bg-blue" id="order_by_height_asc">身高小排到大</button>
+        <button class="bg-blue" id="order_by_index_desc">編號大排到小</button>
+        <button class="bg-blue" id="order_by_index_asc">編號小排到大</button>
+        <br/>
+        <button class="bg-green" id="create">新增</button>
+        <button class="bg-red" id="delete">刪除</button>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>編號</th>
+                <!-- <th>圖片</th> -->
+                <th>名稱</th>
+                <th>血量</th>
+                <th>體重(kg)</th>
+                <th>身高(m)</th>
+                <th>屬性</th>
+                <th>分類</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <img id=svg src="loading.svg"> -->
+            <!-- 三筆假資料提供複製貼上，專案完整完成後可刪除 -->
+            <!-- <tr>
+                <td>001</td>
+                <td><div class="icon icon-001"></div></td>
+                <td>妙蛙種子</td>
+                <td>6.9kg</td>
+                <td>0.7m</td>
+                <td>草</td>
+            </tr> -->
+        
+            <!-- <tr>
+                <td>002</td>
+                <td><div class="icon icon-002"></div></td>
+                <td>妙蛙草</td>
+                <td>13kg</td>
+                <td>1m</td>
+                <td>草</td>
+            </tr> -->
+        
+            <!-- <tr>
+                <td>003</td>
+                <td><div class="icon icon-003"></div></td>
+                <td>妙蛙花</td>
+                <td>100kg</td>
+                <td>2m</td>
+                <td>草</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <div id="svg-c">
+        <!-- <img src="" alt=""> -->
+        <img id="svg" style="display: none;" src="https://raw.githubusercontent.com/iansaf/L1/30da5c3da7d13e19d6bd5c59f93a6889e84aa7fa/loading.svg"></img>
+        <p id="svg-p" style="display: none;"></p>
+    </div>
+    <script src="script.js"></script>
+    <!-- <script src="random.js"></script> -->
+</body>
+</html>
+<!-- <img src="" alt="" style="display: none; width: 40px; height: 40px;" > -->

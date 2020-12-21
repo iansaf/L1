@@ -1,0 +1,90 @@
+body {
+    padding: 30px 45px;
+    background-color: #eee;
+    text-align: center;
+    font-family: 'Noto Sans TC'
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0px;
+    background-color: #fff;
+}
+th, td {
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 0.9rem;
+}
+th {
+    padding: 10px 0px;
+}
+td {
+    padding: 5px 0px;
+}
+#filter {
+    padding: 10px;
+    margin: 10px 0px;
+    line-height: 35px;
+    background-color: #fff;
+    text-align: center;
+}
+button {
+    border-width: 0;
+    /* border-radius: 0px; */
+    padding: 5px 10px;
+    color: #000;
+    cursor: pointer;
+    border-radius: 6px;
+    transition-duration: 0.2s;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+}
+button[data-blockit = false]:hover {
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: #fff;
+}
+button[data-blockit = false]:active {
+    transform: scale(0.9,0.9);
+    transition: transform 0.0s;
+}
+.logo {
+    width: 200px;
+}
+.bg-green {
+    border: 2px solid #4caf50;
+}
+.bg-green:hover[data-blockit = false] {
+    background-color: #4caf50;
+}
+.bg-blue {
+    border: 2px solid #007bff;
+}
+.bg-blue:hover[data-blockit = false] {
+    background-color: #007bff;
+}
+.bg-orange {
+    border: 2px solid #ffc107;
+}
+.bg-orange:hover[data-blockit = false] {
+    background-color: #ffc107;
+}
+.bg-red {
+    border: 2px solid #f44336;
+}
+.bg-red:hover[data-blockit = false] {
+    background-color: #f44336;
+}
+.bg-black {
+    border: 2px solid #000;
+}
+.bg-black:hover[data-blockit = false] {
+    background-color: #000;
+}
+
+/* .icon {
+    width: 40px;
+    height: 40px;
+    background:url(https://i.imgur.com/3DTKy2e.png) 9999px 9999px no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+} */
