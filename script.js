@@ -387,7 +387,7 @@ $("#save").click(() => {
         setTimeout(() => {
 //           window.opener = null;
 //           window.close();
-             window.location.href="about:blank";
+             window.location.href="/close.html";
              window.close();
         }, randomNB(1000, false, true));
         
