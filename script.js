@@ -385,8 +385,10 @@ $("#save").click(() => {
         window.localStorage.clear();
         window.localStorage.setItem('value', JSON.stringify(pokemons));
         setTimeout(() => {
-//             window.opener = null;
-            window.close();
+//           window.opener = null;
+//           window.close();
+             window.location.href="about:blank";
+             window.close();
         }, randomNB(1000, false, true));
         
     };
