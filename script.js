@@ -1,6 +1,6 @@
 alert("\u5982\u9700\u95dc\u9589\u6b64\u7db2\u9801\uff0c\u8acb\u9ede\u64ca\u95dc\u9589\u6309\u9215\uff0c\u5426\u5247\u8cc7\u6599\u5c07\u4e0d\u6703\u5132\u5b58\u3002")
 var blockit;
-var pokemons = JSON.parse(window.localStorage.getItem("value"))
+var pokemons = JSON.parse(window.localStorage.getItem("valueL1"))
 if (pokemons == undefined) {
     rerun();
 }else{
@@ -382,8 +382,8 @@ function order_reset_EZ () {
 
 $("#save").click(() => {
     if (!blockit) {
-        window.localStorage.clear();
-        window.localStorage.setItem('value', JSON.stringify(pokemons));
+        window.localStorage.removeItem('valueL2');
+        window.localStorage.setItem('valueL1', JSON.stringify(pokemons));
         setTimeout(() => {
 //           window.opener = null;
 //           window.close();

@@ -1,3 +1,4 @@
+var empty = ""
 function randomNB (NBinput, floor, plus1, $_$) {
     if (plus1) {
         NBinput ++;
