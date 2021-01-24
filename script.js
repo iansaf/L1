@@ -121,32 +121,29 @@ function rerun () {
     ];
 }
 // 將資料更新到網頁的表格
-function renderTable (dptext) { /*#link 1.https://i.imgur.com/3DTKy2e.png
-                                  2.https://i.imgur.com/XcGu2cg.png*/
-    $("tbody").empty();
-    // $("#svg-c").append(`<img id="svg" src="https://raw.githubusercontent.com/iansaf/L1/30da5c3da7d13e19d6bd5c59f93a6889e84aa7fa/loading.svg"></img>`);
-    $("#svg").show();
-    $("#svg-p").show();
-    $("#svg-p").text(dptext);
-    // $("#svg").show();
-    $("button").css("opacity", "0.6");
-    $("button").css("cursor", "not-allowed");
-    $("button").attr("data-blockit", "true");
-    blockit = true
+function renderTable (dptext) {
+    better_js_empty("tbody");
+    better_js_display("show", "#svg");
+    better_js_display("show", "#svg-p");
+    better_js_text("set", "#svg-p", dptext);
+    better_js_css("set", "button", "opacity", "0.6");
+    better_js_css("set", "button", "cursor", "not-allowed");
+    better_js_data("set", "button", "blockit", "true");
+    blockit = true;
     setTimeout(() => {
-        $("#svg").hide();
-        $("#svg-p").hide();
-        $("#svg-p").text("")
-        $("button").css("opacity", "1");
-        $("button").css("cursor", "pointer");
-        $("button").attr("data-blockit", "false")
-        blockit = false
+        better_js_display("hide", "#svg");
+        better_js_display("hide", "#svg-p");
+        better_js_text("set", "#svg-p", empty);
+        better_js_css("set", "button", "opacity", "1");
+        better_js_css("set", "button", "cursor", "pointer");
+        better_js_data("set", "button", "blockit", "false");
+        blockit = false;
         tbodyinjet();
     },
-    randomNB(3000, false, true, undefined));
+    better_js_random(3000, false, true));
 };
 
-$('#create').click(() => {
+better_js_click("#create", () => {
     if (!blockit) {
         order_reset_EZ();
         pokemons.push({
@@ -162,7 +159,7 @@ $('#create').click(() => {
     };
 });
 
-$("#delete").click(() => {
+better_js_click("delete", () => {
     if (!blockit) {
         var dla = prompt("\u8acb\u8f38\u5165\u7de8\u865f\uff1a");
         if(confirm("\u78ba\u5b9a\u522a\u9664\uff1f") == true){
@@ -182,11 +179,10 @@ function delete_for (dlas) {
 
 function tbodyinjet (trues) {
     if (trues) {
-        $("tbody").empty()
+        better_js_empty("tbody");
     };
     for(var count = 0;count < pokemons.length;count++) {
-        $("tbody").append(
-            `
+        better_js_append("tbody", `
             <tr data-index="${pokemons[count].index}">
                 <td data-index="${pokemons[count].index}" data-attr="${pokemons[count].attr.split(',')}" data-name"${pokemons[count].name}">${pokemons[count].index}</td>
                 <td data-index="${pokemons[count].index}" data-attr="${pokemons[count].attr.split(',')}" data-name"${pokemons[count].name}">${pokemons[count].name}</td>
@@ -198,114 +194,101 @@ function tbodyinjet (trues) {
             </tr>
             `
         );
-        
     };
-    
 };
 
-$("#rec").click(() => {
+better_js_click("#rec", () => {
     if (!blockit) {
         renderTable("\u8f09\u5165\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
     };
 });
 
-$("#rerun").click(() => {
+better_js_click("#rerun", () => {
     if (!blockit) {
         rerun();
         order_reset_EZ();
         renderTable("\u91cd\u7f6e\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
     };
-    
 });
 
-$("#find_by_index").click((idin) => {
+better_js_click("#find_by_index", (idin) => {
     if (!blockit) {
         order_reset_EZ();
         idin = prompt("\u8acb\u8f38\u5165\u7de8\u865f\uff1a");
-        $("td").hide();
-        $("#svg").show();
-        $("#svg-p").show();
-        $("#svg-p").text("\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
+        better_js_display("hide", "td");
+        better_js_display("show", "#svg");
+        better_js_display("show", "#svg-p");
+        better_js_text("set", "#svg-p", "\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
         setTimeout(() => {
-            $("#svg").hide();
-            $("#svg-p").hide();
-            $("#svg-p").text("");
-            $(`td[data-index = ${idin}]`).show();
+            better_js_display("hide", "#svg");
+            better_js_display("hide", "#svg-p");
+            better_js_text("set", "#svg-p", empty);
+            better_js_display("show", `td[data-index = ${idin}]`)
         },
-        randomNB(3000, false, true))
+        better_js_random(3000, false, true))
     };
     
 });
 
-$("#find_all").click(() => {
+better_js_click("#find_all", () => {
     if (!blockit) {
         order_reset_EZ();
-        $("td").hide();
-        $("#svg").show();
-        $("#svg-p").show();
-        $("#svg-p").text("\u8f09\u5165\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
+        better_js_display("hide", "td");
+        better_js_display("show", "#svg");
+        better_js_display("show", "#svg-p");
+        better_js_text("set", "#svg-p", "\u8f09\u5165\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e")
         setTimeout(() => {
-            $("#svg").hide();
-            $("#svg-p").hide();
-            $("#svg-p").text("");
-            $("td").show();
-        }, randomNB(3000, false, true))
+            better_js_display("hide", "#svg");
+            better_js_display("hide", "#svg-p");
+            better_js_text("set", "#svg-p", empty);
+            better_js_display("show", "td");
+        },
+        better_js_random(3000, false, true))
     };
     
 });
 
-$("#find_by_name").click((idin) => {
+better_js_click("#find_by_name", (idin) => {
     if (!blockit) {
         order_reset_EZ();
         idin = prompt("\u8acb\u8f38\u5165\u540d\u5b50\uff1a");
-        $("td").hide();
-        $("#svg").show();
-        $("#svg-p").show();
-        $("#svg-p").text("\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
+        better_js_display("hide", "td");
+        better_js_display("show", "#svg");
+        better_js_display("show", "#svg-p");
+        better_js_text("set", "#svg-p", "\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e")
         setTimeout(() => {
-            $("#svg").hide();
-            $("#svg-p").hide();
-            $("#svg-p").text("");
-            $(`td[data-name = ${idin}]`).show();
+            better_js_display("hide", "#svg");
+            better_js_display("hide", "#svg-p");
+            better_js_text("set", "#svg-p", empty);
+            better_js_display("show", `td[data-name = ${idin}]`)
         },
-        randomNB(3000, false, true))
+        better_js_random(3000, false, true))
     };
-    
 });
 
-$("#find_by_attr").click((idin, aaa) => {
+better_js_click("#find_by_attr", (idin) => {
     if (!blockit) {
         order_reset_EZ();
         idin = prompt("\u8acb\u8f38\u5165\u5c6c\u6027\uff1a");
-        $("td").hide();
-        $("#svg").show();
-        $("#svg-p").show();
-        $("#svg-p").text("\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
+        better_js_display("hide", "td");
+        better_js_display("show", "#svg");
+        better_js_display("show", "#svg-p");
+        better_js_text("set", "#svg-p", "\u641c\u5c0b\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
         setTimeout(() => {
-            $("#svg").hide();
-            $("#svg-p").hide();
-            $("#svg-p").text("");
-            for (var i = 1;i < $("tbody").children("tr").length + 1;i ++) {
-                if ($(`td[data-index = ${i}]`).data("attr").indexOf(idin) !== -1) {
-                    $(`td[data-index = ${i}]`).show();
+            better_js_display("hide", "#svg");
+            better_js_display("hide", "#svg-p");
+            better_js_text("set", "#svg-p", empty);
+            for (var i = 1;i < better_js_children("getlength", "tbody", "tr") + 1;i ++) {
+                if (better_js_data("get", `td[data-index = ${i}]`, "attr").indexOf(idin) != -1) {
+                    better_js_display("show", `td[data-index = ${i}]`)
                 };
             };
-            // if ($(`td`).data("attr").indexOf(idin) !== -1) {
-            //     $(`td[data-index = ]`).show();
-            // };
-            
-            
-            // $(`td[data-attr = ${idin}]`).show();
-            // aaa = $("td[]").data();
-            // if (aaa.indexOf(idin) !== -1) {
-            //     $(`td[data-attr = ${(idin)}]`).show();
-            // };
         },
-        randomNB(3000, false, true))
+        better_js_random(3000, false, true))
     };
 });
 
-$("#order_by_weight_desc").click(() => {
+better_js_click("#order_by_weight_desc", () => {
     if (!blockit) {
         pokemons = pokemons.sort(function (a, b) {
             return a.weight < b.weight ? 1 : -1;
@@ -315,7 +298,7 @@ $("#order_by_weight_desc").click(() => {
     
 });
 
-$("#order_by_weight_asc").click(() => {
+better_js_click("#order_by_weight_asc", () => {
     if (!blockit) {
         pokemons = pokemons.sort(function (a, b) {
             return a.weight > b.weight ? 1 : -1;
@@ -325,7 +308,7 @@ $("#order_by_weight_asc").click(() => {
     
 });
 
-$("#order_by_height_desc").click(() => {
+better_js_click("#order_by_height_desc", () => {
     if (!blockit) {
         pokemons = pokemons.sort(function (a, b) {
             return a.height < b.height ? 1 : -1;
@@ -335,7 +318,7 @@ $("#order_by_height_desc").click(() => {
     
 });
 
-$("#order_by_height_asc").click(() => {
+better_js_click("#order_by_height_asc", () => {
     if (!blockit) {
         pokemons = pokemons.sort(function (a, b) {
             return a.height > b.height ? 1 : -1;
@@ -344,7 +327,7 @@ $("#order_by_height_asc").click(() => {
     }
 });
 
-$("#order_by_index_desc").click(() => {
+better_js_click("#order_by_index_desc", () => {
     if (!blockit) {
         pokemons = pokemons.sort(function (a, b) {
             return a.index < b.index ? 1 : -1;
@@ -354,11 +337,11 @@ $("#order_by_index_desc").click(() => {
     
 });
 
-$("#order_by_index_asc").click(() => {
+better_js_click("#order_by_index_asc", () => {
     order_reset("\u6392\u5e8f\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
 });
 
-$("#order_reset").click(() => {
+better_js_click("#order_reset", () => {
     order_reset("\u91cd\u7f6e\u4e2d\uff0c\u8acb\u7a0d\u5f8c\u002e\u002e\u002e");
 });
 
@@ -380,14 +363,14 @@ function order_reset_EZ () {
     tbodyinjet(true);
 };
 
-$("#save").click(() => {
+better_js_click("#save", () => {
     if (!blockit) {
         window.localStorage.removeItem('valueL2');
         window.localStorage.setItem('valueL1', JSON.stringify(pokemons));
         setTimeout(() => {
 //           window.opener = null;
 //           window.close();
-             window.location.href="/L1/close.html";
+             window.location.href="close.html";
              window.close();
         }, randomNB(1000, false, true));
         
